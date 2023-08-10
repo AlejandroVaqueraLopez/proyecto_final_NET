@@ -148,20 +148,29 @@ namespace Proyecto_final_rpg
     }
 
 
-  /// <summary>
   /// ////////////////////////////
-  /// </summary>
        
  
 
     public class Animations
     {
-        int counter;
+        public int heroHp;
 
-        public Animations()
+        //public int heroAp;
+      
+        public int enemyHp;
+        //public int enemyAp;
+           
+        public Animations(int heroHp, int enemyHp)
         {
-            counter = 0;
+            this.heroHp = heroHp;
+            //this.heroAp = heroAp;
+             this.enemyHp = enemyHp;
+            /* this.enemyAp = enemyAp;*/
+
         }
+
+        int counter;
 
         //This scene shows the characters ready to fight!
         public void skullFightFirstScene()
@@ -214,6 +223,26 @@ namespace Proyecto_final_rpg
             Console.ForegroundColor = ConsoleColor.Black; Console.Write("                \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
             Console.SetCursorPosition(0, 22);
             Console.ForegroundColor = ConsoleColor.Black; Console.Write("                    \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.Write("                                                                        "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588");
+
+            string heroHpBlocks = "";
+            string enemyHpBlocks = "";
+            string heroApBlocks = "";
+            string enemyApBlocks = "";
+
+
+            //Indicators
+            for (int cont = 0; cont < heroHp * 4; cont++)
+            {
+                heroHpBlocks = heroHpBlocks + "\x2588";
+            }
+            for(int cont = 0; cont < enemyHp * 4; cont++)
+            {
+                enemyHpBlocks = enemyHpBlocks + "\x2588";
+            }
+
+            Console.SetCursorPosition(0, 26);
+            Console.ForegroundColor = ConsoleColor.Green; Console.Write("         HP " + heroHp + " " + heroHpBlocks); Console.Write("                                                                        "); Console.ForegroundColor = ConsoleColor.Green; Console.Write("       HP " + enemyHp + " " + enemyHpBlocks);
+
         }
 
         //This scene shows the characters ready to fight!
@@ -267,38 +296,16 @@ namespace Proyecto_final_rpg
             Console.ForegroundColor = ConsoleColor.Black; Console.Write("                \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
             Console.SetCursorPosition(0, 22);
             Console.ForegroundColor = ConsoleColor.Black; Console.Write("                    \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.Write("                                                                        "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588");
+
+
+
+            //Indicators
+            Console.SetCursorPosition(0, 26);
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("       HP \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+
         }
 
-        //This scene shows the characters ready to fight!
-        public void IndicatorsPanel()
-        {
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
-            //line 1
-            Console.SetCursorPosition(0, 25);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                         \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 26);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                    \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 27);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                  \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 28);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
-            Console.SetCursorPosition(0, 29);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
-            Console.SetCursorPosition(0, 30);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 31);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 32);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 33);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 34);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 35);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(0, 36);
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
-        }
+
 
         public void ClearSpaces()
         {
@@ -322,10 +329,9 @@ namespace Proyecto_final_rpg
         public void skullFight()
         {
 
-            //Console.SetWindowSize(300, 300);
-            Console.SetBufferSize(Console.WindowWidth, Console.WindowHeight);
-            Console.Clear();
-            //line 1
+            //Console.SetWindowSize(200, Console.WindowHeight);
+            //Console.SetBufferSize(200, 50);
+            //Console.Clear();
             while (true)
             {
                 
@@ -338,15 +344,7 @@ namespace Proyecto_final_rpg
                 Thread.Sleep(500);
 
             }
-
         }
-
-        public void showIndicators()
-        {
-            IndicatorsPanel();
-        }
-
-
 
 
 
@@ -401,15 +399,27 @@ namespace Proyecto_final_rpg
                     Console.Write(loadingText + loadingTextTerminator);
                 }
 
-                Console.SetCursorPosition(loadingText.Length + i, row);
-                Console.Write("*");
+                Console.SetCursorPosition(column + loadingText.Length + i, row);
+                Console.Write("\x2588\x2588");
             }
         }
 
         public void Ready()
         {
             counter++;
-            System.Threading.Thread.Sleep(75);
+            System.Threading.Thread.Sleep(150);
+        }
+
+        public void ExecLoadingBar()
+        {
+            string loadingText = "Cargando....";
+            Console.CursorVisible = false;
+
+            for (int cont = 0; cont < 19; cont++)
+            {
+                LoadingBar(loadingText, Console.WindowHeight / 2, (Console.WindowWidth / 2 - loadingText.Length));
+                Ready();
+            }
         }
     }
 
@@ -424,35 +434,37 @@ namespace Proyecto_final_rpg
 
         static void Main(string[] args)
         {
-            /*
+            
 
-            Animations spin = new Animations();
-            string loadingText = "Cargando....";
-            Console.Write(loadingText);
-            Console.CursorVisible = false;
+            
+           
+            
 
-            while (true)
-            {
-                spin.Turn(loadingText);
-                spin.SequencedMatrix(2, 0, 20, 10);
-                spin.LoadingBar(loadingText, 23, 0);
-                spin.Ready();
-            }
+            /*  Hero hero = new Hero();
+              hero.numPotion = 3;
+              hero.name = "myHeroAcademy";
+              hero.printPersonalInfo();
 
+              hero.ap = 5;
+              hero.attack();
+              hero.usePotion();
             */
+            Character hero = new Character();
+            hero.hp = 3;
 
-          /*  Hero hero = new Hero();
-            hero.numPotion = 3;
-            hero.name = "myHeroAcademy";
-            hero.printPersonalInfo();
+            Character enemy = new Character();
+            enemy.hp = 4;
 
-            hero.ap = 5;
-            hero.attack();
-            hero.usePotion();
-          */
-            Animations showTime = new Animations();
+            Animations showTime = new Animations(hero.hp, enemy.hp);
+
+
+            showTime.ExecLoadingBar();
+
+
             showTime.skullFight();
-            showTime.showIndicators();
+            //Console.SetCursorPosition(0, 28);
+
+
 
 
 
@@ -462,16 +474,6 @@ namespace Proyecto_final_rpg
                         // Do your work here instead of sleeping...
                           Thread.Sleep(10000);
 
-
-
-
-
-                        for (int i = 0; i < 10; i++)
-                        {
-                            Console.WriteLine("ThreadProc: {0}", i);
-                            // Yield the rest of the time slice.
-                            Thread.Sleep(1000);
-                        }
             */
             Console.ReadLine();
         }
