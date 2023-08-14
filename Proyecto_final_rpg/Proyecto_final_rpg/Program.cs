@@ -708,16 +708,18 @@ namespace Proyecto_final_rpg
         const int N = 5;
         const int M = 5;
 
-
-
         public static void KeyPressEvent()
         {
             Console.WriteLine("Press a key");
-            string key = Console.ReadLine();
-            if (key == "M")
+            //
+            //Console.WriteLine(Console.ReadKey().Key);
+            /*string myKey = Console.ReadKey().Key;
+            switch (myKey)
             {
-                Console.WriteLine("M pressed");
-            }
+                case "DownArrow":
+                    Console.WriteLine("LEFT");
+                    break;
+            }*/
         }
 
 
