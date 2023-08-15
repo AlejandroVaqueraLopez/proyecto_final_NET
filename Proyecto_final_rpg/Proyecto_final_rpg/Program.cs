@@ -10,15 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Markup;
 using static System.Net.Mime.MediaTypeNames;
 using System.Drawing;
-
+using System.Web;
 
 namespace Proyecto_final_rpg
 {
-    public class Map
-    {
-       // public 
-    }
-
     public class Character
     {
         //Properties
@@ -46,7 +41,9 @@ namespace Proyecto_final_rpg
     {
         public int numPotion;
         public int numHelmet;
-        public int numArmour;
+        public int numArmor;
+        public int numGun;
+
 
         public void takePotion()
         {
@@ -61,20 +58,31 @@ namespace Proyecto_final_rpg
         }
         public void takeHelmet()
         {
-            if (numPotion < 5)
+            if (numHelmet < 5)
             {
-                numPotion++;
+                numHelmet++;
             }
             else
             {
-                Console.WriteLine("No puedes tomar otro casco!");
+                Console.WriteLine("No puedes tomar mas cascos");
+            }
+        }
+        public void takeGun()
+        {
+            if (numGun < 5)
+            {
+                numGun++;
+            }
+            else
+            {
+                Console.WriteLine("No puedes tomar mas armas!");
             }
         }
         public void takeArmour()
         {
-            if (numArmour < 5)
+            if (numArmor < 5)
             {
-                numPotion++;
+                numArmor++;
             }
             else
             {
@@ -92,7 +100,6 @@ namespace Proyecto_final_rpg
 
   /// ////////////////////////////
        
- 
 
     public class Animations
     {
@@ -701,28 +708,124 @@ namespace Proyecto_final_rpg
         }
     }
 
+    public class Map
+    {
+
+
+        //properties
+        public const int N = 7;
+        public const int M = 7;
+        public int printingAcum = 0;
+        public string[,] originalMap = new string[N, M]
+        {
+                { "L", " ", "L", "L", "L", " ", "L" },
+                { "L", "S", "L", "W", "L", "F", "L" },
+                { "L", "O", "L", "E", "L", "O", "L" },
+                { "L", "A", "O", "O", "E", "O", "L" },
+                { "L", "E", "L", "L", "O", "E", "L" },
+                { "L", "H", "W", "L", "L", "A", "L" },
+                { "L", "L", "L", "L", "L", "L", "L" }
+        };
+
+        public string[,] discoveredMap = new string[N, M]
+        {
+                { "L", " ", "L", "L", "L", " ", "L" },
+                { "L", "S", "L", "X", "X", "X", "L" },
+                { "L", "O", "L", "X", "X", "X", "L" },
+                { "L", "X", "X", "X", "X", "X", "L" },
+                { "L", "X", "X", "X", "X", "X", "L" },
+                { "L", "X", "X", "X", "X", "X", "L" },
+                { "L", "L", "L", "L", "L", "L", "L" }
+        };
+
+        public void PrintMap(string name, string secondName, int hp, int ap, int gun, int helmet, int armor, int potion)
+        {
+            Console.Clear();
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+
+            for(int row = 0; row < N; row++)
+            {
+                Console.SetCursorPosition(Console.WindowWidth / 2 - 5, (Console.WindowHeight / 2 - 3) + row);
+                for (int col = 0; col < M; col++)
+                {
+                    switch (discoveredMap[row, col])
+                    {
+                        case "L": //wall
+                            Console.Write("L");
+                            break;
+                        case "S": //Entrance
+                            Console.Write("S");
+                            break;
+                        case "E": //Enemy
+                            Console.Write("E");
+                            break;
+                        case "O": //Blank space
+                            Console.Write("O");
+                            break;
+                        case "X": //Undiscovered area
+                            Console.Write("X");
+                            break;
+                        case " ": //Blank space
+                            Console.Write(" ");
+                            break;
+                        case "H": //Helmet
+                            Console.Write("H");
+                            break;
+                        case "W": //Gun
+                            Console.Write("W");
+                            break;
+                        case "F": //Exit
+                            Console.Write("F");
+                            break;
+                    };
+                    Console.Write(" ");
+                }
+            }
+                
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (N + 5));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (N + 6));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                                                                                                   \x2590");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (N + 7));  
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C    " + name); Console.ForegroundColor = ConsoleColor.Green; Console.Write("    \x2588\x2588 HP: " + hp); Console.ForegroundColor = ConsoleColor.DarkYellow; Console.Write("  \x2588\x2588 AP: " + ap); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("   \x2588\x2588 Armas: " + gun); Console.ForegroundColor = ConsoleColor.Blue; Console.Write("   \x2588\x2588 Armaduras: " + armor); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("   \x2588\x2588 Cascos: " + helmet); Console.ForegroundColor = ConsoleColor.Magenta; Console.Write("   \x2588\x2588 Pociones: " + potion); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("   \x2590");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (N + 8));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C    " + secondName + "                                                                                        \x2590");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (N + 9));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
+        
+        }
+    }
 
 
         internal class Program
         {
-        const int N = 5;
-        const int M = 5;
+
 
         public static void KeyPressEvent()
         {
-            Console.WriteLine("Press a key");
-            //
-            //Console.WriteLine(Console.ReadKey().Key);
-            /*string myKey = Console.ReadKey().Key;
-            switch (myKey)
+            Console.WriteLine("Move");
+            ConsoleKeyInfo key = new ConsoleKeyInfo();
+            key = Console.ReadKey();
+
+            switch (key.Key)
             {
-                case "DownArrow":
-                    Console.WriteLine("LEFT");
+                case ConsoleKey.LeftArrow:
+                  Console.WriteLine("LEFT");
                     break;
-            }*/
+                case ConsoleKey.UpArrow:
+                    Console.WriteLine("UP");
+                    break;
+                case ConsoleKey.RightArrow:
+                    Console.WriteLine("RIGHT");
+                    break;
+                case ConsoleKey.DownArrow:
+                    Console.WriteLine("DOWN");
+                    break;
+                default:
+                    Console.WriteLine("default");
+                    break;
+            }
         }
-
-
 
         static void Main(string[] args)
         {
@@ -733,6 +836,10 @@ namespace Proyecto_final_rpg
             hero.secondName = "Sanchez";
             hero.hp = 3;
             hero.ap = 5;
+            hero.numGun = 1;
+            hero.numHelmet = 0;
+            hero.numArmor = 0;
+            hero.numPotion = 0;
 
             Character enemy = new Character();
             enemy.name = "Cucui";
@@ -740,22 +847,20 @@ namespace Proyecto_final_rpg
             enemy.hp = 4;
             enemy.ap = 5;
 
-            Animations showTime = new Animations(hero.name, hero.secondName, enemy.name, enemy.secondName,  hero.hp, enemy.hp, hero.ap, enemy.ap);
+            Animations showTime = new Animations(hero.name, hero.secondName, enemy.name, enemy.secondName, hero.hp, enemy.hp, hero.ap, enemy.ap);
 
-            string [,] map = new string[N, M]
-            {
-                { "S", "L", "W", "L", "F"},
-                { "O", "L", "E", "L", "O"},
-                { "A", "O", "O", "E", "O"},
-                { "E", "L", "L", "O", "E"},
-                { "H", "W", "L", "L", "A"}
-            };
+
 
             do
             {
+                showTime.ExecLoadingBar();
+
+                Map firstLevel = new Map();
+                firstLevel.PrintMap(hero.name, hero.secondName, hero.hp, hero.ap, hero.numGun, hero.numHelmet, hero.numArmor, hero.numPotion);
+
                 KeyPressEvent();
                 /* THIS WILL BE USED!!
-                showTime.ExecLoadingBar();
+                
                 
                 //atack process & animations
                 showTime.preSkullFight();
