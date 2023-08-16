@@ -11,6 +11,7 @@ using System.Windows.Markup;
 using static System.Net.Mime.MediaTypeNames;
 using System.Drawing;
 using System.Web;
+using System.Data;
 
 namespace Proyecto_final_rpg
 {
@@ -21,6 +22,8 @@ namespace Proyecto_final_rpg
         public string secondName;
         public int hp;
         public int ap;
+        public int x;
+        public int y;
 
         //method
         public void attack()
@@ -32,6 +35,11 @@ namespace Proyecto_final_rpg
         public void printPersonalInfo()
         {
             Console.WriteLine(name + secondName);
+        }
+
+        public void Move()
+        {
+            //nothing yet
         }
     }
 
@@ -669,7 +677,6 @@ namespace Proyecto_final_rpg
 
         public void LoadingBar(string loadingTest, int row, int column)
         {
-
             Console.Clear();
             Console.SetCursorPosition(column, row);
             string loadingText = loadingTest + " [";
@@ -692,7 +699,7 @@ namespace Proyecto_final_rpg
         public void Ready()
         {
             counter++;
-            System.Threading.Thread.Sleep(150);
+            System.Threading.Thread.Sleep(50);
         }
 
         public void ExecLoadingBar()
@@ -710,12 +717,11 @@ namespace Proyecto_final_rpg
 
     public class Map
     {
-
-
         //properties
         public const int N = 7;
         public const int M = 7;
         public int printingAcum = 0;
+
         public string[,] originalMap = new string[N, M]
         {
                 { "L", " ", "L", "L", "L", " ", "L" },
@@ -730,13 +736,64 @@ namespace Proyecto_final_rpg
         public string[,] discoveredMap = new string[N, M]
         {
                 { "L", " ", "L", "L", "L", " ", "L" },
-                { "L", "S", "L", "X", "X", "X", "L" },
+                { "L", "C", "L", "X", "X", "X", "L" },
                 { "L", "O", "L", "X", "X", "X", "L" },
                 { "L", "X", "X", "X", "X", "X", "L" },
                 { "L", "X", "X", "X", "X", "X", "L" },
                 { "L", "X", "X", "X", "X", "X", "L" },
                 { "L", "L", "L", "L", "L", "L", "L" }
         };
+        
+        public void UpdateDiscoveredMap(int row, int col, string direction)
+        {
+            int counter = 0;
+            int cpRow = 0;
+            int cpCol = 0;
+
+            Hero myHero = new Hero();
+
+            switch (direction)
+            {
+                case "LEFT":
+                    cpCol = col--;
+                    if (cpCol >= 1)
+                    {
+                        this.discoveredMap[row, cpCol] = "C"; //move the hero value to the new spot
+                        this.discoveredMap[row, col] = this.originalMap[row, col]; //replace the blank space with the original element
+                    }
+                    break;
+                case "UP":
+                    cpRow = row--;
+                    if (cpRow >= 1)
+                    {
+                        this.discoveredMap[cpRow, col] = "C"; //move the hero value to the new spot
+                        this.discoveredMap[row, col] = this.originalMap[row, col]; //replace the blank space with the original element
+                    }
+                    break;
+                case "RIGHT":
+                    cpCol = col++;
+                    if (cpCol < M)
+                    {
+                        this.discoveredMap[row, cpCol] = "C"; //move the hero value to the new spot
+                        this.discoveredMap[row, col] = this.originalMap[row, col]; //replace the blank space with the original element
+                    }
+                    break;
+                case "DOWN":
+                    
+                    //cpRow = row++;
+                    //if (cpCol < N)
+                    //{
+                       // myHero.x = cpCol;
+                        
+                       this.discoveredMap[cpRow, col] = "C"; //move the hero value to the new spot
+                       this.discoveredMap[row, col] = "-";//this.originalMap[row, col]; //replace the blank space with the original element
+                    //}
+
+                    this.PrintMap(myHero.name, myHero.secondName, myHero.hp, myHero.ap, myHero.numGun, myHero.numHelmet, myHero.numArmor, myHero.numPotion);
+                    break;
+
+            }
+        }
 
         public void PrintMap(string name, string secondName, int hp, int ap, int gun, int helmet, int armor, int potion)
         {
@@ -777,6 +834,9 @@ namespace Proyecto_final_rpg
                         case "F": //Exit
                             Console.Write("F");
                             break;
+                        case "C": //Hero
+                            Console.Write("C");
+                            break;
                     };
                     Console.Write(" ");
                 }
@@ -801,8 +861,12 @@ namespace Proyecto_final_rpg
         {
 
 
-        public static void KeyPressEvent()
+        public static void KeyPressEvent(int row, int col)
         {
+            // Map myMap = new Map();
+            int Mtemp = 7;
+            Hero myHero = new Hero();
+
             Console.WriteLine("Move");
             ConsoleKeyInfo key = new ConsoleKeyInfo();
             key = Console.ReadKey();
@@ -810,7 +874,7 @@ namespace Proyecto_final_rpg
             switch (key.Key)
             {
                 case ConsoleKey.LeftArrow:
-                  Console.WriteLine("LEFT");
+                    Console.WriteLine("LEFT");
                     break;
                 case ConsoleKey.UpArrow:
                     Console.WriteLine("UP");
@@ -820,11 +884,20 @@ namespace Proyecto_final_rpg
                     break;
                 case ConsoleKey.DownArrow:
                     Console.WriteLine("DOWN");
+                    if (++myHero.y < Mtemp)
+                    {
+                        myHero.y = myHero.y++;
+                        Console.WriteLine();
+                        Console.Write(myHero.x); Console.Write(myHero.y);
+                    }
+                    //myMap.UpdateDiscoveredMap(row, col, "DOWN");
+
                     break;
                 default:
                     Console.WriteLine("default");
                     break;
             }
+           
         }
 
         static void Main(string[] args)
@@ -840,6 +913,8 @@ namespace Proyecto_final_rpg
             hero.numHelmet = 0;
             hero.numArmor = 0;
             hero.numPotion = 0;
+            hero.x = 1;
+            hero.y = 1;
 
             Character enemy = new Character();
             enemy.name = "Cucui";
@@ -850,15 +925,15 @@ namespace Proyecto_final_rpg
             Animations showTime = new Animations(hero.name, hero.secondName, enemy.name, enemy.secondName, hero.hp, enemy.hp, hero.ap, enemy.ap);
 
 
-
             do
             {
-                showTime.ExecLoadingBar();
+                //showTime.ExecLoadingBar();
 
                 Map firstLevel = new Map();
-                firstLevel.PrintMap(hero.name, hero.secondName, hero.hp, hero.ap, hero.numGun, hero.numHelmet, hero.numArmor, hero.numPotion);
+                //firstLevel.PrintMap(hero.name, hero.secondName, hero.hp, hero.ap, hero.numGun, hero.numHelmet, hero.numArmor, hero.numPotion);
 
-                KeyPressEvent();
+                KeyPressEvent(hero.y, hero.x);
+                //firstLevel.PrintMap(hero.name, hero.secondName, hero.hp, hero.ap, hero.numGun, hero.numHelmet, hero.numArmor, hero.numPotion);
                 /* THIS WILL BE USED!!
                 
                 
