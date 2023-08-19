@@ -99,47 +99,22 @@ namespace Proyecto_final_rpg
             numPotion--;
             Console.WriteLine(numPotion);
         }
-
-        public void Move(int N, int M)
+        
+        public void Move(string direction) //Move to any cardinal direction
         {
-            Console.WriteLine("Move");
-            ConsoleKeyInfo key = new ConsoleKeyInfo();
-            key = Console.ReadKey();
-
-            switch (key.Key)
+            switch (direction)
             {
-                case ConsoleKey.LeftArrow:
-                    //Console.WriteLine("LEFT");
-                    if (this.x > 0)
-                    {
-                        this.x--;
-                    }
+                case "LEFT":
+                    this.x--;
                     break;
-                case ConsoleKey.UpArrow:
-                    //Console.WriteLine("UP");
-                    if (this.y > 0)
-                    {
-                        this.y--;
-                    }
+                case "UP":
+                    this.y--;
                     break;
-                case ConsoleKey.RightArrow:
-                    //Console.WriteLine("RIGHT");
-                    if (this.x < --M)
-                    {
-                        this.x++;
-                    }
+                case "RIGHT":
+                    this.x++;
                     break;
-                case ConsoleKey.DownArrow:
-                    //Console.WriteLine("DOWN");
-
-                    if(this.y < --N)
-                    {
-                        this.y++;
-                    }
-                    break;
-
-                default:
-                    Console.WriteLine("default");
+                case "DOWN":
+                    this.y++;
                     break;
             }
         }
@@ -171,7 +146,6 @@ namespace Proyecto_final_rpg
             this.heroAp = heroAp;
             this.enemyHp = enemyHp;
             this.enemyAp = enemyAp;
-
         }
 
         public void gameOver()
@@ -784,6 +758,7 @@ namespace Proyecto_final_rpg
         public const int N = 7;
         public const int M = 7;
         public int printingAcum = 0;
+        public int[] ItemsAround = new int[8];
 
         public string[,] originalMap = new string[N, M]
         {
@@ -807,8 +782,113 @@ namespace Proyecto_final_rpg
                 { "L", "L", "L", "L", "L", "L", "L" }
         };
 
-        
-        
+       
+        //Methods
+        public bool DetectItem(string item)
+        {
+
+            //returns true on helmet => 1
+            //returns true on potion => 2
+            //returns true on armor => 3
+            //returns true on gun => 4
+            //returns true on enemy => 5
+            switch (item)
+            {
+                case "E":
+                    return true; //enemy
+                    break;
+                default:
+                    return false; //Nothing
+                    break;
+            }
+        }
+
+        public int FindItem(int row, int col)
+        {
+            
+            int count = 0;
+            int enemiesFound = 0;
+            
+            //(row,-) LEFT
+            if ((col - 1) > 0) 
+            {
+               if(DetectItem(this.discoveredMap[row, (col - 1)]))
+                {
+                    enemiesFound++;
+                }
+                //ItemsAround[count] = DetectItem(this.discoveredMap[row, (col - 1)]);
+            }
+            //(-,-) LEFT UP
+            if ((col - 1) > 0 && (row - 1) > 0) 
+            {
+                if (DetectItem(this.discoveredMap[(row - 1), (col - 1)]))
+                {
+                    enemiesFound++;
+                }
+                //ItemsAround[++count] = DetectItem(this.discoveredMap[(row - 1), (col - 1)]);
+            }
+            //(-,col) UP
+            if ((row - 1) > 0)
+            {
+                if (DetectItem(this.discoveredMap[(row - 1), col]))
+                {
+                    enemiesFound++;
+                }
+                //ItemsAround[++count] = DetectItem(this.discoveredMap[(row - 1), col]);
+            }
+            //(-,+) RIGHT UP
+            if ((col + 1) < M && (row - 1) > 0)
+            {
+                if (DetectItem(this.discoveredMap[(row - 1), col + 1]))
+                {
+                    enemiesFound++;
+                }
+                //ItemsAround[++count] = DetectItem(this.discoveredMap[(row - 1), (col + 1)]);
+            }
+            //(row,+) RIGHT
+            if ((col + 1) < M)
+            {
+                if (DetectItem(this.discoveredMap[row, col + 1]))
+                {
+                    enemiesFound++;
+                }
+                ///ItemsAround[++count] = DetectItem(this.discoveredMap[row, (col + 1)]);
+            }
+
+            //(+,+) RIGHT DOWN
+            if ((col + 1) < M && (row + 1) < N)
+            {
+                if (DetectItem(this.discoveredMap[(row + 1), col + 1]))
+                {
+                    enemiesFound++;
+                }
+                //ItemsAround[++count] = DetectItem(this.discoveredMap[(row + 1), (col + 1)]);
+            }
+
+            //(+,col) DOWN
+            if ((row + 1) < N)
+            {
+                if (DetectItem(this.discoveredMap[(row + 1), col]))
+                {
+                    enemiesFound++;
+                }
+                //ItemsAround[++count] = DetectItem(this.discoveredMap[(row + 1), col]);
+            }
+
+            //(+,-) DOWN LEFT
+            if ((row + 1) < N && (col - 1) > 0)
+            {
+                if (DetectItem(this.discoveredMap[(row + 1), col - 1]))
+                {
+                    enemiesFound++;
+                }
+                //ItemsAround[++count] = DetectItem(this.discoveredMap[(row + 1), (col - 1)]);
+            }
+            
+            return enemiesFound;
+
+        }
+
         public void UpdateDiscoveredMap(int row, int col)
         {
             int counter = 0;
@@ -837,11 +917,9 @@ namespace Proyecto_final_rpg
             this.discoveredMap[oldRow, oldcol] = this.originalMap[oldRow, oldcol]; //replace the blank space with the original element
 
             //(row,col)
+            
             //(row,-) LEFT
             if((col - 1) > 0) { this.discoveredMap[row, (col - 1)] = this.originalMap[row, (col - 1)]; }
-            //NOS QUEDAMOS EN QUE TENEMOS QUE HACER UNA FUNCION QUE VERIFIQUE QUE ITEMS O ENEMIGOS TENEMOS ALREDEDOR
-            //EL PLAN ES OBTENER LOS OBJETOS PRIMERO Y LUEGO SALTAR LA ANIMACION DE LUCHA CON ENEMIGO
-            //AL IR TOMANDO LOS OBJETOS, SE IRAN SOBREESCRIBIENDO COMO ESPACIOS VACIOS EN EL MAPA.
             
             //(-,-) LEFT UP
             if ((col - 1) > 0 && (row - 1) > 0) { this.discoveredMap[(row - 1), (col - 1)] = this.originalMap[(row - 1), (col - 1)]; }
@@ -863,7 +941,7 @@ namespace Proyecto_final_rpg
             
             //(+,-) DOWN LEFT
             if ((row + 1) < N && (col - 1) > 0) { this.discoveredMap[(row + 1), (col - 1)] = this.originalMap[(row + 1), (col - 1)]; }
-
+            
         }
 
         public void PrintMap(string name, string secondName, int hp, int ap, int gun, int helmet, int armor, int potion)
@@ -933,6 +1011,7 @@ namespace Proyecto_final_rpg
 
         internal class Program
         {
+        
         static void Main(string[] args)
         {
             //initial values
@@ -961,30 +1040,103 @@ namespace Proyecto_final_rpg
 
             do
             {
-                //showTime.ExecLoadingBar();
 
-                hero.Move(7,7);//this awaits and listen to the arrow direction pressed
-                //Console.WriteLine(hero.y);
+                //showTime.ExecLoadingBar();
+                
+                //Movement functions///////////////////////////////////////////////
+                Console.WriteLine("Move");
+                ConsoleKeyInfo key = new ConsoleKeyInfo();
+                key = Console.ReadKey();
+                
+                switch (key.Key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        //Console.WriteLine("LEFT");
+                        if ((hero.x - 1) > 0 && firstLevel.originalMap[hero.y, (hero.x - 1)] != "L") //&& firstLevel.originalMap[hero.y, (hero.x - 1)] != "L"
+                        {
+                            hero.Move("LEFT");
+                        }
+                        break;
+                    case ConsoleKey.UpArrow:
+                        //Console.WriteLine("UP");
+                        if ((hero.y - 1) > 0 && firstLevel.originalMap[hero.y - 1, hero.x] != "L")
+                        {
+                            hero.Move("UP");
+                        }
+                        break;
+                    case ConsoleKey.RightArrow:
+                        //Console.WriteLine("RIGHT");
+                        if ((hero.x + 1) < 7 - 1 && firstLevel.originalMap[hero.y, (hero.x + 1)] != "L")
+                        {
+                            hero.Move("RIGHT");
+                        }
+                        break;
+                    case ConsoleKey.DownArrow:
+                        //Console.WriteLine("DOWN");
+                        if ((hero.y + 1) < 7 - 1 && firstLevel.originalMap[(hero.y + 1), hero.x] != "L")
+                        {
+                            hero.Move("DOWN");
+                        }
+                        break;
+                }
 
                 //update discovered areas in map
                 firstLevel.UpdateDiscoveredMap(hero.y, hero.x);
-               
-                //print map
+
+                //print discovered map
                 firstLevel.PrintMap(hero.name, hero.secondName, hero.hp, hero.ap, hero.numGun, hero.numHelmet, hero.numArmor, hero.numPotion);
+
+                //If we are over an item, TAKE OR NOT ANIMATION (checks in original map if there is an item under hero position)
+                switch (firstLevel.originalMap[hero.y, hero.x])
+                {
+                    case "H":
+                        Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (7 + 10));
+                        Console.WriteLine("Helmet");
+                        break;
+                    case "W":
+                        Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (7 + 10));
+                        Console.WriteLine("Gun");
+                        break;
+                    case "A":
+                        Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (7 + 10));
+                        Console.WriteLine("Armor");
+                        break;
+                    case "F":
+                        Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (7 + 10));
+                        Console.WriteLine("Final of laberinto");
+                        break;
+                    case "P":
+                        Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (7 + 10));
+                        Console.WriteLine("Potion");
+                        break;
+
+                };
+
+                Array.Clear(firstLevel.ItemsAround, 0, 8);//clear list of items found
+                int itemsArray = firstLevel.FindItem(hero.y, hero.x); //returns how many enemies we have to fight couse of our location
+                //Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (7 + 10));
+                //Console.Write(itemsArray); 
                
+                //returns true on helmet => do animation takeHelmet
+                //returns true on potion => do animation takePotion
+                //returns true on armor => do animation takeArmor
+                //returns true on gun => do animation takeGun
+                //returns true on enemy => do animation fight <= last one
+
                 
-                /* THIS WILL BE USED!!
+
+                 ///THIS WILL BE USED!!
                 
                 //atack process & animations
-                showTime.preSkullFight();
+                /*showTime.preSkullFight();
                 hero.attack();
                 showTime.heroHp = hero.hp;
                 showTime.heroAp = hero.ap;
                 showTime.enemyHp = enemy.hp;
                 showTime.enemyAp = enemy.ap;
                 showTime.postSkullFight("enemy", "red");//who? and color
+                
                 */
-
 
                 /*
                  effects code =>
