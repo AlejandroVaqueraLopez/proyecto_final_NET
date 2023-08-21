@@ -25,22 +25,12 @@ namespace Proyecto_final_rpg
         public int ap;
         public int x;
         public int y;
-
-        //method
-        public void attack()
-        {
-            //Console.WriteLine("attack: " + ap);
-            //this.hp;
-        }
-
         public void printPersonalInfo()
         {
             Console.WriteLine(name + secondName);
         }
 
     }
-
-
 
     public class Hero: Character
     {
@@ -106,7 +96,8 @@ namespace Proyecto_final_rpg
 
             if(numPotion > 0)
             {
-                Console.WriteLine("Use potion? (1. YES | 2. NO)  =>  ");
+
+                Console.ForegroundColor = ConsoleColor.DarkGray; Console.WriteLine("\nUse potion? (1. YES | 2. NO)  =>  ");
                 opc = Convert.ToInt32(Console.ReadLine());
                 switch (opc)
                 {
@@ -424,22 +415,64 @@ namespace Proyecto_final_rpg
             Console.Clear();
             Console.OutputEncoding = System.Text.Encoding.Unicode;
 
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (1));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                         \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (2));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                    \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (3));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                  \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (4));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (5));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (6));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (7));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (8));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (9));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (10));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (11));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (12));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (13));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (14));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (15));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.White; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (16));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("           \x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.White; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (17));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("           \x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (18));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("            \x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (19));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("              \x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2580\x2580"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (20));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("               \x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (21));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("               \x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (22));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("                \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (23));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("                    \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+
             //question spot
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 1);
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 12);
             Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 2);
-            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                                                                                                   \x2590");
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 3);
-            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                                  YOU WON!!!! (Press ENTER to exit):                               \x2590");
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 4);
-            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                              This game was made by: Alejandro Vaquera                             \x2590");
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 5);
-            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                                                                                                   \x2590");
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 6);
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 13);
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                               YOU ESCAPED FROM THE MAZE!!!! (Press ENTER to exit):                          \x2590");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 14);
             Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Gray; Console.Write("  =>  ");
             Console.ReadLine();
+
             return true;
         }
 
@@ -452,13 +485,37 @@ namespace Proyecto_final_rpg
             Console.Clear();
             Console.OutputEncoding = System.Text.Encoding.Unicode;
 
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (1));
+            Console.ForegroundColor = ConsoleColor.Gray; Console.Write(""); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("           \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (2));
+            Console.ForegroundColor = ConsoleColor.Gray; Console.Write(""); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("      \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (3));
+            Console.ForegroundColor = ConsoleColor.Gray; Console.Write("  "); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("  \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (4));
+            Console.ForegroundColor = ConsoleColor.Gray; Console.Write("   "); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (5));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("   "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (6));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("   "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (7));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("   "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (8));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("   "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (9));
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("  "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (10));
+            Console.ForegroundColor = ConsoleColor.Gray; Console.Write("   "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 11, (Console.WindowHeight / 2 - 13) + (11));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("   "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588");
+
+
             //question spot
             Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (7));
             Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
             Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (8));
             Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                                                                                                   \x2590");
             Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (9));
-            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                                  Skull enemy found!! (1. FIGHT | 2. ESCAPE):                                \x2590");
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                           Skull enemy found!! (1. FIGHT | 2. ESCAPE):                             \x2590");
             Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (10));
             Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                                                                                                   \x2590");
             Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + (11));
@@ -480,58 +537,181 @@ namespace Proyecto_final_rpg
 
         }
 
+        public bool MenuScene()
+        {
+            int opcSelected = 0;
+
+            Console.Clear();
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (1));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                         \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (2));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                    \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (3));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                  \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (4));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (5));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (6));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (7));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (8));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (9));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (10));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (11));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (12));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (13));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (14));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (15));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.White; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (16));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("           \x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.White; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (17));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("           \x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (18));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("            \x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (19));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("              \x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2580\x2580"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (20));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("               \x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (21));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("               \x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (22));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("                \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (23));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("                    \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+
+            do
+            {
+                switch(opcSelected)
+                {
+                    case 0:
+                        //question spot
+                        Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 12);
+                        Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
+                        Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 13);
+                        Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                               YOU ESCAPED FROM THE MAZE!!!! (Press ENTER to exit):                          \x2590");
+                        Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 14);
+                        Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
+                        Console.WriteLine();
+                        Console.ForegroundColor = ConsoleColor.Gray; Console.Write("  =>  ");
+                        Console.ReadLine();
+                        break;
+                }
+
+                ConsoleKeyInfo key = new ConsoleKeyInfo();
+                key = Console.ReadKey();
+
+                switch (key.Key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        //Console.WriteLine("LEFT");
+                        if ((hero.x - 1) > 0 && firstLevel.originalMap[hero.y, (hero.x - 1)] != "L") //&& firstLevel.originalMap[hero.y, (hero.x - 1)] != "L"
+                        {
+                            hero.Move("LEFT");
+                        }
+                        break;
+                    case ConsoleKey.UpArrow:
+                        //Console.WriteLine("UP");
+                        if ((hero.y - 1) > 0 && firstLevel.originalMap[hero.y - 1, hero.x] != "L")
+                        {
+                            hero.Move("UP");
+                        }
+                        break;
+                    case ConsoleKey.RightArrow:
+                        //Console.WriteLine("RIGHT");
+                        if ((hero.x + 1) < 7 - 1 && firstLevel.originalMap[hero.y, (hero.x + 1)] != "L")
+                        {
+                            hero.Move("RIGHT");
+                        }
+                        break;
+                    case ConsoleKey.DownArrow:
+                        //Console.WriteLine("DOWN");
+                        if ((hero.y + 1) < 7 - 1 && firstLevel.originalMap[(hero.y + 1), hero.x] != "L")
+                        {
+                            hero.Move("DOWN");
+                        }
+                        break;
+                }
+            } while (true);
+            
+
+            return true;
+        }
+
+
         public void GameOver()
         {
             Console.Clear();
             Console.OutputEncoding = System.Text.Encoding.Unicode;
             //line 1
-            Console.WriteLine();
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (1));
             Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                         \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (2));
             Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                    \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (3));
             Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                  \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (4));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (5));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (6));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (7));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (8));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (9));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (10));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (11));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (12));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (13));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (14));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (15));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.White; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (16));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("           \x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.White; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (17));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("           \x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (18));
+            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("            \x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (19));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("              \x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2580\x2580"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2580\x2580"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (20));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("               \x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (21));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("               \x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (22));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("                \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 22, (Console.WindowHeight / 2 - 16) + (23));
+            Console.ForegroundColor = ConsoleColor.Black; Console.Write("                    \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
+            //question spot
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 12);
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 13);
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x258C                                  GAME OVER!!!! (Press ENTER to exit):                             \x2590");
+            Console.SetCursorPosition(Console.WindowWidth / 2 - 50, (Console.WindowHeight / 2 - 3) + 14);
+            Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC\x25AC");
             Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("              \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("           \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("        \x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Red; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("      \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("          \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.White; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("  \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("           \x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.White; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("           \x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("            \x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Black; Console.Write("              \x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Black; Console.Write("               \x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Black; Console.Write("               \x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Black; Console.Write("                \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588"); Console.Write("                                                                      "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Black; Console.Write("                    \x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588"); Console.ForegroundColor = ConsoleColor.DarkGray; Console.Write("\x2588\x2588"); Console.Write("                                                                        "); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Gray; Console.Write("\x2588\x2588"); Console.ForegroundColor = ConsoleColor.Black; Console.Write("\x2588\x2588");
+            Console.ForegroundColor = ConsoleColor.Gray; Console.Write("  =>  ");
 
+            Console.ReadLine();
         }
 
 
@@ -934,7 +1114,6 @@ namespace Proyecto_final_rpg
 
         }
 
-
         public void ClearSpaces()
         {
             int currentLineCursor = Console.CursorTop;
@@ -956,10 +1135,6 @@ namespace Proyecto_final_rpg
         //This scene shows the characters ready to fight!
         public void preSkullFight()
         {
-
-            //Console.SetWindowSize(200, 50);
-            //Console.SetBufferSize(200, 50);
-            //Console.Clear();
                 Console.Clear();
                 skullFightFirstScene();
                 Thread.Sleep(1000);
@@ -981,11 +1156,6 @@ namespace Proyecto_final_rpg
         //This scene shows the characters ready to fight!
         public void postSkullFight(string target, string color)
         {
-
-            //Console.SetWindowSize(200, 50);
-            //Console.SetBufferSize(200, 50);
-            //Console.Clear();
-
                 Console.Clear();
                 skullFightFirstScene();
                 Thread.Sleep(1000);
@@ -1041,21 +1211,21 @@ namespace Proyecto_final_rpg
             }
         }
 
-        public void Ready()
+        public void Ready(int duration)
         {
             counter++;
-            System.Threading.Thread.Sleep(50);
+            System.Threading.Thread.Sleep(duration);
         }
 
-        public void ExecLoadingBar()
+        public void ExecLoadingBar(string loadingText, int duration)
         {
-            string loadingText = "Cargando....";
+            
             Console.CursorVisible = false;
 
             for (int cont = 0; cont < 19; cont++)
             {
                 LoadingBar(loadingText, Console.WindowHeight / 2, (Console.WindowWidth / 2 - loadingText.Length));
-                Ready();
+                Ready(duration);
             }
         }
     }
@@ -1075,7 +1245,7 @@ namespace Proyecto_final_rpg
                 { "L", "O", "L", "E", "L", "O", "L" },
                 { "L", "A", "O", "O", "E", "O", "L" },
                 { "L", "E", "L", "L", "O", "P", "L" },
-                { "L", "H", "W", "L", "L", "A", "L" },
+                { "L", "P", "W", "L", "L", "A", "L" },
                 { "L", "L", "L", "L", "L", "L", "L" }
         };
 
@@ -1094,12 +1264,6 @@ namespace Proyecto_final_rpg
         //Methods
         public bool DetectItem(string item)
         {
-
-            //returns true on helmet => 1
-            //returns true on potion => 2
-            //returns true on armor => 3
-            //returns true on gun => 4
-            //returns true on enemy => 5
             switch (item)
             {
                 case "E":
@@ -1374,9 +1538,9 @@ namespace Proyecto_final_rpg
             Hero hero = new Hero();
             hero.name = "Alexis";
             hero.secondName = "Sanchez";
-            hero.hp = 3;
-            hero.ap = 5;
-            hero.numGun = 1;
+            hero.hp = randomGenerator.Next(1, 6);
+            hero.ap = randomGenerator.Next(1, 3);
+            hero.numGun = 0;
             hero.numHelmet = 0;
             hero.numArmor = 0;
             hero.numPotion = 0;
@@ -1387,16 +1551,12 @@ namespace Proyecto_final_rpg
             enemy.name = "Cucui";
             enemy.secondName = "Sanchez";
             enemy.hp = 2;
-            enemy.ap = 5;
+            enemy.ap = 1;
 
             Animations showTime = new Animations(hero.name, hero.secondName, enemy.name, enemy.secondName, hero.hp, enemy.hp, hero.ap, enemy.ap);
             
             Map firstLevel = new Map();
 
-            //music player
-            
-
-            //NECESSARYYYYY
             firstLevel.PrintMap(hero.name, hero.secondName, hero.hp, hero.ap, hero.numGun, hero.numHelmet, hero.numArmor, hero.numPotion);
             bool isOverSomething = false;
             bool musicFlag = false;
@@ -1412,7 +1572,7 @@ namespace Proyecto_final_rpg
                 }
 
                 firstLevel.PrintMap(hero.name, hero.secondName, hero.hp, hero.ap, hero.numGun, hero.numHelmet, hero.numArmor, hero.numPotion);
-                //showTime.ExecLoadingBar();
+                
 
                 if (isOverSomething) //we need to kill an item
                 {
@@ -1510,7 +1670,9 @@ namespace Proyecto_final_rpg
                     //If we are over an item, TAKE OR NOT ANIMATION (checks in original map if there is an item under hero position)
                     switch (firstLevel.originalMap[hero.y, hero.x])
                     {
+                        
                         case "H":
+                            showTime.ExecLoadingBar("OH what's this??", 50);
                             helmetTaken = showTime.TakeHelmet();//executes the potion animation and returns the response
                             if (helmetTaken)
                             {
@@ -1519,6 +1681,7 @@ namespace Proyecto_final_rpg
                             }
                             break;
                         case "W":
+                            showTime.ExecLoadingBar("OH what's this??", 50);
                             gunTaken = showTime.TakeGun();//executes the potion animation and returns the response
                             if (gunTaken)
                             {
@@ -1527,6 +1690,7 @@ namespace Proyecto_final_rpg
                             }
                             break;
                         case "A":
+                            showTime.ExecLoadingBar("OH what's this??", 50);
                             armorTaken = showTime.TakeArmor();//executes the potion animation and returns the response
                             if (armorTaken)
                             {
@@ -1535,9 +1699,11 @@ namespace Proyecto_final_rpg
                             }
                             break;
                         case "F":
+                            showTime.ExecLoadingBar("Is this the end??", 50);
                             victory = showTime.VictoryScene();
                             break;
                         case "P":
+                            showTime.ExecLoadingBar("OH what's this??", 50);
                             potionTaken = showTime.TakePotion();//executes the potion animation and returns the response
                             if (potionTaken)
                             {
@@ -1555,11 +1721,10 @@ namespace Proyecto_final_rpg
                     {
                         if (enemyArray[cont] != 0 || enemyArray[cont + 1] != 0)
                         {
-
                             fightWithEnemy = showTime.EnemyChoose();//executes the potion animation and returns the response
                             if (fightWithEnemy)
                             {
-
+                                showTime.ExecLoadingBar("Get ready to fight!", 150);
                                 //starting values
                                 musicFlag = true;
                                 int startingHp = hero.hp;
@@ -1582,20 +1747,19 @@ namespace Proyecto_final_rpg
                                     ///HERO ATTACK
                                     //showTime.preSkullFight();
 
-                                    
                                     showTime.heroHp = hero.hp;
                                     showTime.heroAp = hero.ap;
                                     showTime.enemyHp = enemy.hp;
                                     showTime.enemyAp = enemy.ap;
                                     showTime.postSkullFight("enemy", "red");//who? and color
-                                    enemy.hp--;
+                                    enemy.hp -= hero.ap;
                                     ///ENEMY ATTACK
                                     showTime.heroHp = hero.hp;
                                     showTime.heroAp = hero.ap;
                                     showTime.enemyHp = enemy.hp;
                                     showTime.enemyAp = enemy.ap;
                                     showTime.postSkullFight("hero", "red");//who? and color
-                                    hero.hp--;
+                                    hero.hp -= enemy.ap;
 
                                     if (hero.UsePotion())
                                     {
@@ -1603,11 +1767,11 @@ namespace Proyecto_final_rpg
                                         hero.hp += (startingHp - hero.hp);
                                     }
 
-                                    if (hero.hp == 0)
+                                    if (hero.hp <= 0)
                                     {
                                         heroIsDead = true;
                                     }
-                                    else if(enemy.hp == 0)
+                                    else if(enemy.hp <= 0)
                                     {
                                         enemyIsDead = true;
                                         //kill the position of enemy
@@ -1632,11 +1796,19 @@ namespace Proyecto_final_rpg
                 }
 
 
-            } while (!heroIsDead);
+            } while (!heroIsDead && !victory);
 
+            if (heroIsDead)
+            {
+                showTime.GameOver();
+            }
+            else if (victory)
+            {
+                showTime.VictoryScene();
+            }
 
-            showTime.GameOver();
-                  
+            Console.Clear();
+            Console.WriteLine("Level 2 coming soon.....!");
             Console.ReadLine();
         }
     }
