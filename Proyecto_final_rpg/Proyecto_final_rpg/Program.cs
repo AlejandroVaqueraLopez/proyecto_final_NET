@@ -722,9 +722,9 @@ namespace Proyecto_final_rpg
         {
             Console.OutputEncoding = System.Text.Encoding.Unicode;
             //line 1
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 48, (Console.WindowHeight / 2 - 16) + (1));
+            Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                       \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
-            Console.SetCursorPosition(Console.WindowWidth / 2 - 49, (Console.WindowHeight / 2 - 16) + (2));
+            Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                    \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
             Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.DarkRed; Console.Write("                  \x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588\x2588");
@@ -1111,23 +1111,6 @@ namespace Proyecto_final_rpg
 
         }
 
-        public void ClearSpaces()
-        {
-            int currentLineCursor = Console.CursorTop;
-            Console.SetCursorPosition(0, Console.CursorTop);
-            Console.Write(new string(' ', Console.WindowWidth));
-            Console.SetCursorPosition(0, currentLineCursor);
-        }
-
-        public void RefreshCharacters()
-        {
-            for (int cont = 0; cont < 23; cont++)
-            {
-                Console.SetCursorPosition(0, cont);
-                ClearSpaces();
-            }
-        }
-
 
         //This scene shows the characters ready to fight!
         public void preSkullFight()
@@ -1402,7 +1385,9 @@ namespace Proyecto_final_rpg
             Console.Clear();
             Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-            for(int row = 0; row < N; row++)
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+
+            for (int row = 0; row < N; row++)
             {
                 Console.SetCursorPosition(Console.WindowWidth / 2 - 5, (Console.WindowHeight / 2 - 3) + row);
                 for (int col = 0; col < M; col++)
@@ -1410,13 +1395,19 @@ namespace Proyecto_final_rpg
                     switch (discoveredMap[row, col])
                     {
                         case "L": //wall
-                            Console.Write("L");
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                            Console.Write("\x2588");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                         case "S": //Entrance
-                            Console.Write("S");
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Write("\x0305");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                         case "E": //Enemy
-                            Console.Write("E");
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.Write("\x25A0");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                         case "O": //Blank space
                             Console.Write("O");
@@ -1428,22 +1419,33 @@ namespace Proyecto_final_rpg
                             Console.Write(" ");
                             break;
                         case "H": //Helmet
-                            Console.Write("H");
+                            Console.Write("\x25A0");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                         case "W": //Gun
-                            Console.Write("W");
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.Write("\x25A0");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                         case "A": //Armor
-                            Console.Write("A");
+                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                            Console.Write("\x25A0");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                         case "F": //Exit
-                            Console.Write("F");
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write("\x0305");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                         case "P": //Potion
-                            Console.Write("P");
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            Console.Write("\x25A0");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                         case "\x25A0": //Hero
+                            Console.ForegroundColor = ConsoleColor.Cyan;
                             Console.Write("\x25A0");
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
                             break;
                     };
                     Console.Write(" ");
