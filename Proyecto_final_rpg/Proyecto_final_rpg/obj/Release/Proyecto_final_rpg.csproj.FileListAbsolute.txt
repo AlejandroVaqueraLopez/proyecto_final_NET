@@ -1,0 +1,8 @@
+C:\Users\Vacintosh\Documents\projects\proyecto_final_NET\Proyecto_final_rpg\Proyecto_final_rpg\bin\Release\Proyecto_final_rpg.exe.config
+C:\Users\Vacintosh\Documents\projects\proyecto_final_NET\Proyecto_final_rpg\Proyecto_final_rpg\bin\Release\Proyecto_final_rpg.exe
+C:\Users\Vacintosh\Documents\projects\proyecto_final_NET\Proyecto_final_rpg\Proyecto_final_rpg\bin\Release\Proyecto_final_rpg.pdb
+C:\Users\Vacintosh\Documents\projects\proyecto_final_NET\Proyecto_final_rpg\Proyecto_final_rpg\obj\Release\Proyecto_final_rpg.csproj.AssemblyReference.cache
+C:\Users\Vacintosh\Documents\projects\proyecto_final_NET\Proyecto_final_rpg\Proyecto_final_rpg\obj\Release\Proyecto_final_rpg.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vacintosh\Documents\projects\proyecto_final_NET\Proyecto_final_rpg\Proyecto_final_rpg\obj\Release\Proyecto_final_rpg.csproj.CoreCompileInputs.cache
+C:\Users\Vacintosh\Documents\projects\proyecto_final_NET\Proyecto_final_rpg\Proyecto_final_rpg\obj\Release\Proyecto_final_rpg.exe
+C:\Users\Vacintosh\Documents\projects\proyecto_final_NET\Proyecto_final_rpg\Proyecto_final_rpg\obj\Release\Proyecto_final_rpg.pdb
